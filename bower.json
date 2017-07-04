@@ -1,0 +1,21 @@
+{
+  "name": "ceramicsnight",
+  "version": "0.0.1",
+  "homepage": "",
+  "authors": [
+    "Josh Benson <bensonjosha@gmail.com>"
+  ],
+  "description": "ceramics event",
+  "keywords": [
+    "josh"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
