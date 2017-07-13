@@ -42,7 +42,8 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 app.controller('PageCtrl', function ( $window, $scope ) {
   $scope.nightLevel = '1';
   $window.addEventListener('scroll', function() {
-      $scope.nightLevel = $window.innerHeight > $window.scrollY ? (1 - $window.scrollY / $window.innerHeight) : 0;
+    var scrollAspect = $window.scrollY * 4;
+      $scope.nightLevel = $window.innerHeight > scrollAspect ? (1 - scrollAspect / $window.innerHeight) : 0;
       $scope.$apply(function(){
           $scope.nightLevel = $scope.nightLevel + '';
       });
