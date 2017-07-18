@@ -12,7 +12,9 @@ html, body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
 }
-
+.navbar-inverse .navbar-nav>li>a {
+    color: white!important;
+}
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -24,6 +26,14 @@ body {
     font-size: 1.5em;
     color: white;
 }
+.navbar-brand {
+    padding: 0.5em;
+    display: flex;
+}
+.navbar-brand img {
+    width: 30px;
+    
+}
 .navbar-nav a {
     opacity: 0.8;
     color: beige;
@@ -32,6 +42,9 @@ body {
 .navbar-nav a:hover, .navbar-nav a:focus {
     background-color: inherit!important;
     opacity: 1;
+}
+.navbar-header {
+    display: inline-flex;
 }
 .dropdown {
     cursor:pointer;
@@ -62,7 +75,7 @@ body {
     line-height: 0.75em;
     color: #b7b7b7;
     font-family: 'Montserrat', sans-serif;
-    font-size: 8em;
+    font-size: 10vw;
 }
 .logo-title .subtitle {
     font-family: 'Montserrat';
