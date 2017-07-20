@@ -195,7 +195,9 @@ table tr:nth-child(even){
     margin: 0 auto;
 }
 
-
+.pinterest-board span {
+    max-width: none!important;
+}
 
 .table-xs > div {
     padding: 20px;
