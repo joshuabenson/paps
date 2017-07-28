@@ -55,8 +55,9 @@ h3.headline {
 
 }
 .register-section > a > button {
-    margin: 0 0.5em;
+    margin: 0.25em 0.5em;
     padding: 0 2em!important;
+    min-width: 300px;
 }
 .content-wrapper {
     background-color: black;
