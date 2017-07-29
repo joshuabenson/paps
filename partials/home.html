@@ -1,4 +1,4 @@
-<div class="content-wrapper backdrop-image">
+<div class="content-wrapper backdrop-image" style="background-position-y: -{{windowScroll / 3}}px;">
 
     <div class="section logo" style="background-color: rgba(0,0,0,{{nightLevel}})">
         <span class="logo-header">
@@ -7,9 +7,9 @@
     <span class="logo-title">Ceramics Night
         <p class="subtitle">hosted by Imagine Art</p>
     </span>    
-        <div class="section register-section">
-              <a target="_blank" href="https://www.imagineart.net/ceramics-night#page-body-wrapper"><button type="button" class="register btn btn-primary btn-lg"><span><i class="fa fa-moon-o"></i>&nbsp Register Now</span></button></a>
-              <a href="#/calendar"><button type="button" class="register calendar btn btn-primary btn-lg"><span><i class="fa fa-calendar"></i>&nbsp Full Calendar</span></button></a>
+        <div class="section register-section" style="opacity: {{nightLevel < 1 ? 1 : 0.85}}">
+              <a target="_blank" href="https://www.imagineart.net/ceramics-night#page-body-wrapper"><button style="transform: scaleY({{nightLevel < 0.8 ? 1 : 0.85}});" type="button" class="register btn btn-primary btn-lg"><span><i class="fa fa-moon-o"></i>&nbsp Register Now</span></button></a>
+              <a href="#/calendar"><button style="transform: scaleY({{nightLevel < 0.8 ? 1 : 0.85}});" type="button" class="register calendar btn btn-primary btn-lg"><span><i class="fa fa-calendar"></i>&nbsp Full Calendar</span></button></a>
         </div>
     </div>
     <div class="section info">

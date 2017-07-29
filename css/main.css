@@ -53,17 +53,20 @@ h3.headline {
     background-color: rgb(59, 81, 185);
 }
 .register-section {
+    /*transform: rotateX(90deg);*/
     padding: 0!important;
     margin-top: 3em;
     margin-bottom: -2em;
     background-color: transparent!important;
     text-align: center;
+    transition: 0.5s all;
 
 }
 .register-section > a > button {
     margin: 0.25em 0.5em;
     padding: 0 2em!important;
     min-width: 300px;
+    transition: 1.25s all;
 }
 .content-wrapper {
     background-color: black;
@@ -121,7 +124,7 @@ h3.headline {
     padding: 0px;
 }
 .backdrop-image {
-    background-position-y: -50px;
+    /*background-position-y: -50px;*/
     background-repeat: no-repeat;
     background-size: 100vw;
     background-attachment: fixed;
@@ -130,6 +133,7 @@ h3.headline {
 }
 .logo {
     text-align: center;
+    perspective: 800px;
 }
 .logo-title {
     line-height: 0.75em;
