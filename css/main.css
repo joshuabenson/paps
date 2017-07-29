@@ -30,7 +30,10 @@ h3 {
 }
 h3.headline {
     /*text-align: left;*/
-    padding: 0.5em 1em;
+    margin: 0.5em 0 0em 0;
+    box-sizing: border-box;
+    
+    padding: 0.5em 1em 1em 1em;
     border-bottom: 1px solid rgba(68, 68, 68, 0.17);
 }
 .register {
@@ -50,7 +53,10 @@ h3.headline {
     background-color: rgb(59, 81, 185);
 }
 .register-section {
-    margin-top: -50px;
+    padding: 0!important;
+    margin-top: 3em;
+    margin-bottom: -2em;
+    background-color: transparent!important;
     text-align: center;
 
 }
@@ -108,18 +114,27 @@ h3.headline {
 /* Page Sections */
 .section,
 .section-colored {
+    background-color: white;
     padding: 50px 0;
 }
+.section.info {
+    padding: 0px;
+}
+.backdrop-image {
+    background-position-y: -50px;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-attachment: fixed;
+    background-clip: content-box;
+    background-image: url(https://static1.squarespace.com/static/55afb009e4b07ae38ec26f80/t/59603f16197aea49afbe5b34/1499479846147/?format=1500w);
+}
 .logo {
-
     text-align: center;
-
-    
 }
 .logo-title {
     line-height: 0.75em;
-    color: #b7b7b7;
-    text-shadow: 0px 0px 6px rgb(222, 222, 222);
+    color: white;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.48);
     font-family: 'Montserrat', sans-serif;
     font-size: 10vw;
 }
@@ -267,6 +282,13 @@ table tr:nth-child(even){
 
     }
 /* Responsive Styles */
+@media (max-width: 700px) { 
+    .backdrop-image {
+        background-position-y: 0px;
+        background-size: 200vw;
+        background-attachment: scroll;
+    }
+}
 @media (max-width: 767px) {
 
     .carousel {
