@@ -18,7 +18,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
-    .when("/calendar", {templateUrl: "partials/calendar.html", controller: "ScheduleCtrl"})
+    .when("/calendar", {templateUrl: "partials/calendar.html", controller: "TableCtrl"})
     // .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
     // .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
@@ -40,6 +40,20 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
  * Controls all other Pages
  */
 app.controller('PageCtrl', function ( $window, $scope ) {
+
+  // Activates the Carousel
+  $('.carousel').carousel({
+    interval: 5000
+  });
+
+  // Activates Tooltips for Social Links
+  $('.tooltip-social').tooltip({
+    selector: "a[data-toggle=tooltip]"
+  })
+});
+
+app.controller('FadeBackgroundCtrl', function ( $window, $scope ) {
+
   $scope.nightLevel = '1';
   $scope.windowScroll = '0';
   $window.addEventListener('scroll', function() {
@@ -52,75 +66,49 @@ app.controller('PageCtrl', function ( $window, $scope ) {
       
       
   });
-  // Activates the Carousel
-  $('.carousel').carousel({
-    interval: 5000
-  });
 
-  // Activates Tooltips for Social Links
-  $('.tooltip-social').tooltip({
-    selector: "a[data-toggle=tooltip]"
-  })
 });
 
-app.controller('ScheduleCtrl', function ( $window, $scope ) {
-  
-
-  //responsiveTable ('table');
-  //responsiveTable ('.table-class');
+app.controller('TableCtrl', function ( $window, $scope ) {
   responsiveTable('#table-id');
-
-
   balanceSize();  // on load get balance on size if the browser has small screen
-  
+  // get responsive table for small screens 
 
-// get responsive table for small screens 
-
-/*  the concept for that tool
-* if the screen width lt 1000 the table hide the table ,
-* and for each td in table row append two bootstrap div col-xs-6 one for td and the other for the opposite th 
-*
-* Now You have the concept so you can develop your own code :) and control on xs divs view
-*/
+  /*  the concept for that tool
+  * if the screen width lt 1000 the table hide the table ,
+  * and for each td in table row append two bootstrap div col-xs-6 one for td and the other for the opposite th 
+  *
+  * Now You have the concept so you can develop your own code :) and control on xs divs view
+  */
   function responsiveTable (table){
+      // to append row number before each data
+      var RowNum = 0;
+      // select all table rows except table header row
+      $(table+' tr:gt(0)').each(function(){
+          // append the header for row number to the small table 
+          $('.table-xs').append('<div class="row-header"> <h5> Session '+RowNum+'</h5> </div>');
 
-      var RowNum = 0;                   // to append row number before each data
+          $(this).find('td').each(function(){   // select all table data 
 
-      $(table+' tr:gt(0)').each(function(){       // select all table rows except table header row
-
-        // append the header for row number to the small table 
-        $('.table-xs').append('<div class="row-header"> <h5> Session '+RowNum+'</h5> </div>');
-
-        $(this).find('td').each(function(){   // select all table data 
-
-          // for each td get it's equivalent header and append header text to the small table header div
-          $('.table-xs').append('<div class="col-xs-6 header">'+$('th').eq($(this).index()).text()+'</div>');
-        
-          // for each td get it's text and append it to the small table data div
-          $('.table-xs').append('<div class="col-xs-6 data">'+$(this).text()+'</div>');
+              // for each td get it's equivalent header and append header text to the small table header div
+              $('.table-xs').append('<div class="col-xs-6 header">'+$('th').eq($(this).index()).text()+'</div>');
+            
+              // for each td get it's text and append it to the small table data div
+              $('.table-xs').append('<div class="col-xs-6 data">'+$(this).text()+'</div>');
       
-        });
-        
-        RowNum++;
-      
+          });
+          RowNum++;
       });
+  }
 
-    }
-
-    balanceSize();
-
+  balanceSize();
   // IMPORTANT on resize fun will be excessive load on your processor if you have many rows 
-
   $(window).resize(function(){      
     if ($(window).width() < 1000 ){
       balanceSize(); // balance the size on resize 
     }
   });
-
-
-  
-    // balance size will make all headers height equal data height !!! Just to fill the BG color ><
-
+  // balance size will make all headers height equal data height !!! Just to fill the BG color ><
   function balanceSize(){
     var i = 0 ;   
     $('.header').each(function(){
@@ -131,10 +119,4 @@ app.controller('ScheduleCtrl', function ( $window, $scope ) {
     });
   }
 
-
 });
-
-
-/*
-* Developed By Yasser Mas 
-*/

@@ -10,10 +10,11 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 
 html, body {
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Francois One';
+    background-color: #7b59a2;
 }
 .navbar-inverse .navbar-nav>li>a {
-    color: white!important;
+    color: black!important;
 }
 body {
     padding-top: 50px;
@@ -29,30 +30,46 @@ h3 {
     text-shadow: 0px 0px 2px rgba(68, 68, 68, 0.17);
 }
 h3.headline {
-    /*text-align: left;*/
-    margin: 0.5em 0 0em 0;
+        /* text-align: left; */
+    min-height: 60px;
+    /* display: table; */
+    /* line-height: 40px; */
+    /* width: 100%; */
+    /* margin: 0.5em 0 0em 0; */
+    /* white-space: nowrap; */
     box-sizing: border-box;
+    /* padding: 1em; */
     
     padding: 0.5em 1em 1em 1em;
     border-bottom: 1px solid rgba(68, 68, 68, 0.17);
 }
-.register {
+.social {
     width: 33%;
     font-size: 1.75em;
     text-align: initial;
     height: 57px;
-    background-color: rgb(255, 144, 40);
+    /*background-color: rgb(255, 144, 40);*/
     background-image: none;
     border: none;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: 'Francois One';
 }
-.register > span {
-    /*padding: 0.5em;*/
+.social-twitter {
+    background-image: none;
+    background-color: rgb(29, 161, 242);
 }
-.register.calendar {
-    background-color: rgb(59, 81, 185);
+.social-fb {
+    background-color: rgb(59, 89, 152);
+    background-image: none;
+
 }
-.register-section {
+.social-fb .social-icon {
+    padding: 0 0.5em;
+    height: 40px;
+}
+.social-icon {
+    height: 50px;
+}
+.social-section {
     /*transform: rotateX(90deg);*/
     padding: 0!important;
     margin-top: 3em;
@@ -62,18 +79,20 @@ h3.headline {
     transition: 0.5s all;
 
 }
-.register-section > a > button {
+.social-section > a > button {
     margin: 0.25em 0.5em;
     padding: 0 2em!important;
+    min-height: 60px;
     min-width: 300px;
     transition: 1.25s all;
 }
 .content-wrapper {
-    background-color: black;
+    /*background-color: black;*/
 }
 .navbar {
     font-size: 1.5em;
-    color: white;
+    background-image: none;
+    background-color: white;
 }
 .navbar-brand {
     margin: 0 0.5em;
@@ -81,7 +100,7 @@ h3.headline {
     display: flex;
 }
 .navbar-brand img {
-    width: 30px;
+    width: 150px;
     
 }
 .navbar-nav a {
@@ -117,7 +136,7 @@ h3.headline {
 /* Page Sections */
 .section,
 .section-colored {
-    background-color: white;
+    /*background-color: white;*/
     padding: 50px 0;
 }
 .section.info {
@@ -125,11 +144,11 @@ h3.headline {
 }
 .backdrop-image {
     /*background-position-y: -50px;*/
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;
     background-size: 100vw;
     background-attachment: fixed;
     background-clip: content-box;
-    background-image: url(https://static1.squarespace.com/static/55afb009e4b07ae38ec26f80/t/59603f16197aea49afbe5b34/1499479846147/?format=1500w);
+    background-image: url(https://static1.squarespace.com/static/55afb009e4b07ae38ec26f80/t/59603f16197aea49afbe5b34/1499479846147/?format=1500w);*/
 }
 .logo {
     text-align: center;
@@ -139,11 +158,12 @@ h3.headline {
     line-height: 0.75em;
     color: white;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.48);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Francois One';
+
     font-size: 10vw;
 }
 .logo-title .subtitle {
-    font-family: 'Montserrat';
+    font-family: 'Francois One';
     font-size: 0.35em;
 }
 .logo-header {
